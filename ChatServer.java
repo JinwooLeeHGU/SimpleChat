@@ -5,6 +5,7 @@ import java.util.*;
 public class ChatServer {
 
 	public static void main(String[] args) {
+		int userCount;
 		try{
 			ServerSocket server = new ServerSocket(10001);
 			System.out.println("Waiting connection...");
@@ -13,6 +14,7 @@ public class ChatServer {
 				Socket sock = server.accept();
 				ChatThread chatthread = new ChatThread(sock, hm);
 				chatthread.start();
+				userCount++;
 			} // while
 		}catch(Exception e){
 			System.out.println(e);
