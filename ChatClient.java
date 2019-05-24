@@ -23,7 +23,7 @@ public class ChatClient {
 			InputThread it = new InputThread(sock, br);
 			it.start();
 			String line = null;
-			while((line = keyboard.readLine()) != null){
+			while((line = keyboard.readLine()) != null){ 
 				pw.println(line);
 				pw.flush();
 				if(line.equals("/quit")){
